@@ -51,19 +51,19 @@ public class Routes extends AbstractRoutingModule
             .on(RequestMethod.DELETE)
             .consumes(JSON)
             .produces(JSON)
-            .to(NoteEndpoint.class).deleteById(param("id", Long.class));
+            .to(NoteEndpoint.class).deleteById(param(Long.class));
       route()
             .from("/notes/{id}")
             .on(RequestMethod.GET)
             .consumes(JSON)
             .produces(JSON)
-            .to(NoteEndpoint.class).findById(param("id", Long.class));
+            .to(NoteEndpoint.class).findById(param(Long.class));
       route()
             .from("/notes/{id}")
             .on(RequestMethod.PUT)
             .consumes(JSON)
             .produces(JSON)
-            .to(NoteEndpoint.class).update(param("id", Long.class), param(Note.class));
+            .to(NoteEndpoint.class).update(param(Long.class), param(Note.class));
 
    }
 

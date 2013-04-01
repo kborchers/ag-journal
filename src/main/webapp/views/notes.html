@@ -18,5 +18,5 @@
         </div>
     </div>
 </div>
-<button ng-click="previous()">Previous Page</button>
-<button ng-click="next()">Next Page</button>
+<button ng-click="previous()" ng-show="currentPage + 1 > 1">Previous Page</button>
+<button ng-click="next()" ng-show="currentPage + 1 < numberOfPages">Next Page</button>
