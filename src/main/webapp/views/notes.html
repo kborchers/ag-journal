@@ -1,0 +1,22 @@
+<div class="no-notes" ng-show="!searchResults.length">You currently have 0 notes.<br><br><strong>Add one!</strong></div>
+<div class="page-indicator" ng-show="searchResults.length">
+    <img src="styles/images/ajax-loader.gif" ng-show="showLoader" class="loader">
+    <span ng-show="!showLoader" ng-repeat="page in pageRange" class="page-dot" ng-class="{'page-dot-active': currentPage == page}"></span>
+</div>
+<div ng-class="{'ui-grid-a': !(pageSize % 2), 'ui-grid-b': !(pageSize % 3)}" note-page-swipe="">
+    <div ng-repeat="note in searchResults" class="note-container">
+        <div class="note-panel">
+            <div class="note">
+                <button type="button" data-icon="arrow-d" data-iconpos="notext" title="Menu" class="note-menu-button ui-btn-right" ng-click="showHideNoteMenu(note)">Menu</button>
+                <div class="note-body" ng-bind-html-unsafe="note.note | newline"></div>
+                <div class="note-reminder">{{note.reminder}}</div>
+            </div>
+            <div class="note-menu ui-grid-a" ng-show="this['note-menu-'+note.id]">
+                <div class="ui-block-a"><button data-icon="gear" data-corners="false" title="Edit" ng-click="edit(note.id)">Edit</button></div>
+                <div class="ui-block-b"><button data-icon="delete" data-corners="false" title="Delete" ng-click="remove(note.id)">Delete</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+<button ng-click="previous()">Previous Page</button>
+<button ng-click="next()">Next Page</button>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>AeroGear Journal</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="styles/jquery.mobile-1.3.0.min.css">
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body ng-app="aerogearJournalApp">
+
+        <!-- Add your site or application content here -->
+        <div id="mainPage" class="container" jquery-mobile="" data-role="page">
+            <div data-role="panel" id="menu-panel" data-display="overlay">
+                <ul data-role="listview">
+                    <li data-icon="delete" data-theme="a"><a href="#menu-panel" data-rel="close">Menu</a></li>
+                    <li><a href="#/">Home</a></li>
+                    <li><a href="#/notes">Notes</a></li>
+                </ul>
+            </div>
+            <div data-role="header">
+                <h1>AeroGear Journal</h1>
+                <a href="#menu-panel" data-icon="bars" data-iconpos="notext" title="Menu">Menu</a>
+                <a href="#/note" data-icon="plus" data-iconpos="notext" title="New Note">New Note</a>
+            </div>
+            <div id="mainContent" data-role="content" ng-view=""></div>
+            <div data-role="popup" id="newNoteMessage" data-position-to="window"></div>
+        </div>
+
+        <script src="scripts/scripts.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
