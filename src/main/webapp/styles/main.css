@@ -56,6 +56,6 @@
     background-color: #888888;
 }
 
-.hidden {
-    display: none;
+.note-page-buttons {
+    text-align: center;
 }

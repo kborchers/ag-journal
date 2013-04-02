@@ -18,5 +18,7 @@
         </div>
     </div>
 </div>
-<button ng-click="previous()" ng-show="currentPage + 1 > 1">Previous Page</button>
-<button ng-click="next()" ng-show="currentPage + 1 < numberOfPages">Next Page</button>
+<div data-role="controlgroup" data-type="horizontal" ng-show="searchResults.length" class="note-page-buttons">
+    <a data-role="button" ng-click="previous($event)" ng-class="{'ui-disabled': !currentPage}">Previous Page
+    <a data-role="button" ng-click="next($event)" ng-class="{'ui-disabled': (currentPage + 1) >= numberOfPages}">Next Page
+</a></a></div>
